@@ -41,6 +41,33 @@ List of Linux namespaces that provides containers with isolation to system resou
 
 *Note: It is best practice to use a specific tag when inheriting a parent image so that changes to the parent dependency are controlled*
 
+2. **docker build -t my-python-app .**
+   - Build the Docker image. Pass in the -t parameter to name your image.
+
+3. **docker run -p 5001:5000 -d my-python-app**
+   - -p flag maps a port running inside the container to your host
+
+4. **docker logs container-name/container-id**
+   - Check the log output of the container.
+   - prints out what is sent to standard out by your application
+
+5. **docker tag my-python-app [dockerhub username]/my-python-app**
+   - Tag the image with your username.
+  
+6. **docker push [dockerhub username]/my-python-app**
+   - use this command to push your image to the Docker Hub registry
+
+*Notes:
+Docker images contain all the dependencies that they need to run an application within the image. This is useful because you no longer need to worry about environment drift (version differences) when you rely on dependencies that are installed on every environment you deploy to.*
+   
+
+
+
+
+Notes:
+The Dockerfile is used to create reproducible builds for your application. A common workflow is to have your CI/CD automation run docker image build as part of its build process. After images are built, they will be sent to a central registry where they can be accessed by all environments (such as a test environment) that need to run instances of that application.
+
+   - 
 ### **Reference**
 ---
 [Dockerfile info](https://docs.docker.com/engine/reference/builder/)
