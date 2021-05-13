@@ -1,6 +1,6 @@
 Containers are just a process (or a group of processes) running in isolation, which is achieved with Linux namespaces and control groups. Linux namespaces and control groups are features that are built into the Linux kernel. Other than the Linux kernel itself, there is nothing special about containers.
-## LAB 1
-
+## LAB 1 Run your First Container 
+---
 1. **docker container run -t ubuntu top**
    - *command to run a container with the Ubuntu image by using the top command*
    - The -t flag allocates a pseudo-TTY, which you need for the top command to work correctly.
@@ -34,4 +34,13 @@ List of Linux namespaces that provides containers with isolation to system resou
 4. **docker system prune**
    - *Removes any stopped containers, unused volumes and networks, and dangling images*
 
-## LAB 2
+## LAB 2 Add Ci/CD value with Docker Images
+---
+1. Dockerfile
+    - A Dockerfile lists the instructions needed to build a Docker image
+
+*Note: It is best practice to use a specific tag when inheriting a parent image so that changes to the parent dependency are controlled*
+
+### **Reference**
+---
+[Dockerfile info](https://docs.docker.com/engine/reference/builder/)
