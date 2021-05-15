@@ -57,13 +57,13 @@ List of Linux namespaces that provides containers with isolation to system resou
 6. **docker push [dockerhub username]/my-python-app**
    - use this command to push your image to the Docker Hub registry
 
+Notes on Deploying Changes:
+Once you have made a changes, you need to rebuild your app and push it to Docker Hub registery.
+
+
 *Notes:
 Docker images contain all the dependencies that they need to run an application within the image. This is useful because you no longer need to worry about environment drift (version differences) when you rely on dependencies that are installed on every environment you deploy to.*
    
-
-
-
-
 Notes:
 The Dockerfile is used to create reproducible builds for your application. A common workflow is to have your CI/CD automation run docker image build as part of its build process. After images are built, they will be sent to a central registry where they can be accessed by all environments (such as a test environment) that need to run instances of that application.
 
